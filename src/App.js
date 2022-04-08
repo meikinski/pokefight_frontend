@@ -1,6 +1,11 @@
 import './App.css';
 import { Routes, Route, NavLink } from "react-router-dom";
 import React, {useEffect, useState} from "react";
+import Home from "./components/Home";
+import PokemonOverview from "./components/PokemonOverview";
+import PokemonDetail from "./components/PokemonDetail";
+import Leaderboard from './components/Leaderboard';
+import Logo from './assets/Logo.png';
 
 
 function App() {
@@ -15,6 +20,8 @@ function App() {
 
   return <div className='App'>
     <nav>
+      <img src={Logo} alt="Logo"/>
+      <div className="nav-links">
     <NavLink 
     style={({ isActive }) => {
       return {
@@ -32,14 +39,27 @@ function App() {
       };
     }}
     className="navLink" to='/pokemon'>Overview</NavLink>
+    <NavLink 
+    style={({ isActive }) => {
+      return {
+        color: isActive ? "#FCBF49" : "",
+        fontWeight: isActive ? "bold" : "",
+      };
+    }}
+    className="navLink" to='/leaderboard'>Leaderboard</NavLink>
+    </div>
+    <div className="Login">
+      Login
+    </div>
     </nav>
     <main>
     
     
     <Routes>
-      <Route exact path='/'  />
-      <Route exact path='/pokemon'  />
-      <Route exact path='/pokemon/:id'  />
+      <Route exact path='/' element={<Home />} />
+      <Route exact path='/pokemon' element={<PokemonOverview pokemonData={pokemonData}/>}  />
+      <Route exact path='/pokemon/:id' element={<PokemonDetail pokemonData={pokemonData}/>} />
+      <Route exact path='/leaderboard' element={<Leaderboard />} />
     </Routes>
     </main>
   </div>;
