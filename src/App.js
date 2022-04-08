@@ -1,6 +1,9 @@
 import './App.css';
 import { Routes, Route, NavLink } from "react-router-dom";
 import React, {useEffect, useState} from "react";
+import Home from "./components/Home";
+import PokemonOverview from "./components/PokemonOverview";
+import PokemonDetail from "./components/PokemonDetail";
 
 
 function App() {
@@ -37,9 +40,9 @@ function App() {
     
     
     <Routes>
-      <Route exact path='/'  />
-      <Route exact path='/pokemon'  />
-      <Route exact path='/pokemon/:id'  />
+      <Route exact path='/' element={<Home />} />
+      <Route exact path='/pokemon' element={<PokemonOverview pokemonData={pokemonData}/>}  />
+      <Route exact path='/pokemon/:id' element={<PokemonDetail pokemonData={pokemonData}/>} />
     </Routes>
     </main>
   </div>;
