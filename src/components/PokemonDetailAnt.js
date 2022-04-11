@@ -17,21 +17,27 @@ const { Meta } = Card;
 
 export default function PokemonDetailAnt({ pokemonData }) {
   const params = useParams();
-  console.log("=> Params: ", params);
+  console.log("=> pokemonData: ", pokemonData);
+  console.log("=> total number of pokemon: ", pokemonData.length);
+  console.log("=> current pokemon params.id: ", params.id);
 
-  /*   const pokemon = pokemonData.find((pokemon) => params.id === pokemon.id);
-  console.log("=> Pokemon: ", pokemon); */
+  const pokemon = pokemonData.find((pokemon) => params.id == pokemon.id);
+  console.log("=> Pokemon Name: ", pokemon.name.english);
 
-  const imagePlaceholder = require("../static/contemplative-reptile.jpg");
+  // const imagePlaceholder = require("../static/contemplative-reptile.jpg");
   const cssCardWrapper = "cardWrapper";
+
+  const pokemonArtwork =
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
+  console.log("=> pokemonArtwork: ", pokemonArtwork);
 
   return (
     <>
       <div className={cssCardWrapper}>
         <Card
-          title='CHARMANDER'
+          title={pokemon.name.english}
           style={{ width: 440 }}
-          cover={<img alt='pokemon' src={imagePlaceholder} />}
+          cover={<img alt='pokemon' src={pokemonArtwork} />}
           actions={[
             <SettingOutlined key='setting' />,
             <EditOutlined key='edit' />,

@@ -30,3 +30,9 @@ div.ant-card-meta-title {
 ul.ant-card-actions {
   background-color: #fbe37a;
 }
+
+div.Pokemon_Overview > h1,
+div.Pokemon_Overview > h5,
+div.pokemonInfo > h4 {
+  color: #fff;
+}
