@@ -1,4 +1,3 @@
-
 .App {
   text-align: center;
   background-color: rgb(5, 3, 42);
@@ -20,9 +19,7 @@ Nav {
 Nav img {
   height: 70px;
   padding: 25px;
-
 }
-
 
 .navLink {
   color: white;
@@ -37,7 +34,6 @@ Nav img {
   padding-right: 25px;
 }
 
-
 /*OVERVIEW*/
 
 .Pokemon_Overview {
@@ -45,7 +41,6 @@ Nav img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
 }
 
 .Pokemon_Overview li {
@@ -65,7 +60,7 @@ Nav img {
   text-decoration: underline;
 }
 
-.Pokemon_Overview ul { 
+.Pokemon_Overview ul {
   padding-left: 1em;
 }
 
@@ -79,7 +74,6 @@ h5 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
- 
 }
 
 .leaderboard-container {
@@ -89,7 +83,6 @@ h5 {
   width: auto;
   border-radius: 10px;
   padding: 20px;
-
 }
 
 .leaderboard-container img {
@@ -124,5 +117,3 @@ h5 {
 .leaderboard-user-card p {
   display: inline;
 }
-
-

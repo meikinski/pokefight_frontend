@@ -13,3 +13,7 @@
   align-items: center; */
   border: 15px solid #fbe37a;
 }
+
+.MuiBox-root {
+  background-color: #fff;
+}

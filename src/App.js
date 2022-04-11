@@ -3,16 +3,14 @@ import { Routes, Route, NavLink } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Home from "./components/Home";
 import PokemonOverview from "./components/PokemonOverview";
-import PokemonDetail from "./components/PokemonDetail";
+// import PokemonDetail from "./components/PokemonDetail";
 // import PokemonDetailMui from "./components/PokemonDetailMui";
+import PokemonDetailAnt from "./components/PokemonDetailAnt";
 import Leaderboard from "./components/Leaderboard";
 import Logo from "./assets/Logo.png";
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
-
-  // Test
-  // const [pokemonDataMui, setPokemonDataMui] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:8000/pokemon")
@@ -77,12 +75,13 @@ function App() {
             element={<PokemonOverview pokemonData={pokemonData} />}
           />
           {/* POKEMON DETAIL BY ID */}
+
           <Route
             exact
             path='/pokemon/:id'
-            // element={<PokemonDetailMui pokemonData={pokemonData} />}
-            element={<PokemonDetail pokemonData={pokemonData} />}
+            element={<PokemonDetailAnt pokemonData={pokemonData} />}
           />
+
           {/* HIGHSCORE TABLE */}
           <Route exact path='/leaderboard' element={<Leaderboard />} />
         </Routes>
