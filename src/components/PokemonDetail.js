@@ -4,6 +4,7 @@ export default function PokemonDetail({ pokemonData}) {
     const params = useParams();
     console.log(pokemonData)
     
+    // eslint-disable-next-line eqeqeq
     const pokemon = pokemonData.find(pokemon => params.id == pokemon.id);
     console.log(pokemon)
 
