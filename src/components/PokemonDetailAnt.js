@@ -1,5 +1,7 @@
 import * as React from "react";
 import { useParams } from "react-router-dom";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 import "./PokemonDetailAnt.css";
 import "antd/dist/antd.css";
@@ -41,12 +43,13 @@ export default function PokemonDetailAnt({ pokemonData }) {
         <Card
           title={`#${pokemon.id} | ${pokemonName} Pokemon | ${pHP} HP`}
           style={{ width: 500 }}
-          cover={<img alt='pokemon' src={pokemonArtwork} />}
+          cover={
+            <img alt='pokemon' src={pokemonArtwork} /> || (
+              <Skeleton baseColor='#FF0000' highlightColor="#444" count={5} />
+            )
+          }
         >
-          <Meta title={`HT: 3.03 | WT: 77.2 lbs`} />
-          <br />
           <hr />
-          <br />
           <Meta
             avatar={<FireFilled />}
             title='ATTACK'
