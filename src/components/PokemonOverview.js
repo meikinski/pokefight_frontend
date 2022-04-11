@@ -16,6 +16,7 @@ export default function PokemonOverview({ pokemonData }) {
             <li key={pokemon.id}>  
             <Link to={`/pokemon/${pokemon.id}`} className="link">
             <div className="pokemonInfo">
+                <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`} alt={pokemon.name.english} />
                 <h4>{pokemon.name.english}</h4>
             </div>
             </Link>

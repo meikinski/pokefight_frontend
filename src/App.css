@@ -51,8 +51,8 @@ Nav img {
 .Pokemon_Overview li {
   list-style: none;
   display: inline-block;
-  margin-left: 1rem;
-  margin-top: 0;
+  
+  margin: 2rem 3rem;
   padding: 0px;
 }
 
@@ -67,10 +67,17 @@ Nav img {
 
 .Pokemon_Overview ul { 
   padding-left: 1em;
+
 }
 
 h5 {
   margin-top: 0;
+}
+
+.Pokemon_Overview img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 
 /*Leaderboard*/
