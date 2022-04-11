@@ -12,7 +12,7 @@ function App() {
   const [pokemonData, setPokemonData] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8000/pokemon')
+        fetch('https://pokefight-group3.herokuapp.com/pokemon')
         .then(response => response.json())
         .then(data => setPokemonData(data))
         .catch(error => console.log(error))
