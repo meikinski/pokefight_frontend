@@ -7,8 +7,14 @@ export default function PokemonDetail({ pokemonData}) {
     const pokemon = pokemonData.find(pokemon => params.id == pokemon.id);
     console.log(pokemon)
 
+    const pokemonArtwork =
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
+  console.log("=> pokemonArtwork: ", pokemonArtwork);
+    
+
     return (
         <div className='Pokemon_Detail'>
+            <img src={pokemonArtwork} alt={pokemon.name.english} />
             <div>Name: {pokemon.name.english}</div>
             <div>Type: {pokemon.type[0]}, {pokemon.type[1]}</div>
             <div>Base</div>
