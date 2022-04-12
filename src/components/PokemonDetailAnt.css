@@ -1,9 +1,17 @@
-
 .cardWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.metaSection {
+  padding: 1.4rem 1.4rem;
+}
+
+.progressSection {
+  padding-top: 0.2rem;
+  padding-bottom: 1.2rem;
 }
 
 div.ant-card-bordered {

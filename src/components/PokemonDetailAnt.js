@@ -25,6 +25,8 @@ export default function PokemonDetailAnt({ pokemonData }) {
 
   // const imagePlaceholder = require("../static/contemplative-reptile.jpg");
   const cssCardWrapper = "cardWrapper";
+  const cssMetaSection = "metaSection";
+  const cssProgressSection = "progressSection";
 
   let pokemonName = pokemon.name.english;
   let pokemonArtwork = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`;
@@ -48,28 +50,44 @@ export default function PokemonDetailAnt({ pokemonData }) {
           }
         >
           <hr />
+
           <Meta
+            className={cssMetaSection}
             avatar={<FireFilled />}
             title='ATTACK'
             description={`Discard an Energy card attached to the defending Pokemon`}
           />
-          <br />
-          <Progress type='circle' percent={pAttack} width={60} />
+
+          <div className={cssProgressSection}>
+            <Progress type='circle' percent={pAttack} width={60} />
+          </div>
+
           <hr />
           <Meta
+            className={cssMetaSection}
             avatar={<RadarChartOutlined />}
             title='DEFENSE'
             description={`Your opponent's Active Pokemon is now Poisoned`}
           />
 
-          <Progress percent={pDefense} />
-          <br />
-          <hr />
-          <Meta avatar={<SyncOutlined spin />} title='SPEED' />
+          <div className={cssProgressSection}>
+            <Progress percent={pDefense} />
+          </div>
 
-          <Progress percent={pSpeed} steps={5} strokeColor='#52c41a' />
           <hr />
           <Meta
+            className={cssMetaSection}
+            avatar={<SyncOutlined spin />}
+            title='SPEED'
+          />
+
+          <div className={cssProgressSection}>
+            <Progress percent={pSpeed} steps={5} strokeColor='#52c41a' />
+          </div>
+
+          <hr />
+          <Meta
+            className={cssMetaSection}
             avatar={<AppstoreOutlined />}
             title='SPECIALS'
             description={`Special Attack: ${pspAttack} | Special Defense: ${pspDefense} `}
