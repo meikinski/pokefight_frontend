@@ -1,7 +1,8 @@
 export default function Home() {
-    return (
-        <div>
-            <h1>WELCOME TO POKEFIGHT</h1>
-        </div>
-    )
+  return (
+    <div className='home'>
+      <h1 className='homeHeadline'>WELCOME TO POKEFIGHT</h1>
+      <p className='instrText'>Gameplay Instructions...</p>
+    </div>
+  );
 }

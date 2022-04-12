@@ -1,8 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #05032a !important;
+}
+
 .App {
   text-align: center;
   background-color: rgb(5, 3, 42);
   color: white;
 }
+
+/* HOME */
+.home {
+  min-height: 80vh;
+  background-color: #05032a;
+}
+
+.homeHeadline {
+  font-weight: bold;
+  color: #eee;
+}
+
+.instrText {
+  font-size: 1.4rem;
+  color: #eee;
+}
+
 /*NAVIGATION*/
 
 Nav {

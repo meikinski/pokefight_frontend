@@ -67,15 +67,17 @@ function App() {
       </nav>
       <main>
         <Routes>
+          {/* HOME PAGE */}
           <Route exact path='/' element={<Home />} />
+
           {/* POKEMON LIST */}
           <Route
             exact
             path='/pokemon'
             element={<PokemonOverview pokemonData={pokemonData} />}
           />
-          {/* POKEMON DETAIL BY ID */}
 
+          {/* POKEMON DETAIL BY ID */}
           <Route
             exact
             path='/pokemon/:id'

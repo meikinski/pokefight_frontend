@@ -18,12 +18,10 @@ const { Meta } = Card;
 
 export default function PokemonDetailAnt({ pokemonData }) {
   const params = useParams();
-  /*   console.log("=> pokemonData: ", pokemonData);
   console.log("=> total number of pokemon: ", pokemonData.length);
-  console.log("=> current pokemon params.id: ", params.id); */
+  console.log("=> current pokemon params.id: ", params.id);
 
   const pokemon = pokemonData.find((pokemon) => params.id == pokemon.id);
-  // console.log("=> Pokemon Name: ", pokemon.name.english);
 
   // const imagePlaceholder = require("../static/contemplative-reptile.jpg");
   const cssCardWrapper = "cardWrapper";
@@ -45,7 +43,7 @@ export default function PokemonDetailAnt({ pokemonData }) {
           style={{ width: 500 }}
           cover={
             <img alt='pokemon' src={pokemonArtwork} /> || (
-              <Skeleton baseColor='#FF0000' highlightColor="#444" count={5} />
+              <Skeleton baseColor='#FF0000' highlightColor='#444' count={5} />
             )
           }
         >
