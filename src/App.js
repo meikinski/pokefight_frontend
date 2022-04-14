@@ -11,6 +11,53 @@ import Logo from './assets/Logo.png';
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
 
+    const [playerData, setPlayerData] = useState([]);
+    const [aiData, setAiData] = useState([]);
+
+    const [pokeIndex, setPokeIndex] = useState(0);
+
+    const [battleStarted, setBattleStarted] = useState(false);
+
+    const [winsInMatch, setWinsInMatch] = useState([]);
+
+    function startFight(){
+      setupEnemy();
+      debugSetupPlayer();
+      setWinsInMatch([0, 0]);
+    }
+
+    function debugSetupPlayer(){
+      let pokesMe = [];
+
+      for (let index = 0; index < 6; index++) {
+        pokesMe.push(pokemonData[Math.floor(Math.random() * pokemonData.length)]);
+      }
+
+      setPlayerData(pokesMe);
+
+      console.log(pokesMe);
+    }
+
+    function setupEnemy(){
+      let pokes = [];
+
+      for (let index = 0; index < 6; index++) {
+        pokes.push(pokemonData[Math.floor(Math.random() * pokemonData.length)]);
+      }
+
+      setAiData(pokes);
+
+      console.log(pokes);
+    }
+
+    function continueBattle(typeOfAttack){
+
+    }
+
+    function endBattle(){
+
+    }
+
     useEffect(() => {
         fetch('https://pokefight-group3.herokuapp.com/pokemon')
         .then(response => response.json())
