@@ -18,11 +18,14 @@ function App() {
 
     const [battleStarted, setBattleStarted] = useState(false);
 
+    const [battleWon, setBattleWon] = useState("");
+
     const [winsInMatch, setWinsInMatch] = useState([]);
 
     function startFight(){
       setupEnemy();
       debugSetupPlayer();
+      setBattleStarted(true);
       setWinsInMatch([0, 0]);
     }
 
@@ -51,11 +54,57 @@ function App() {
     }
 
     function continueBattle(typeOfAttack){
+      let pokeMe = playerData[pokeIndex]["base"];
+      let pokeAi = aiData[Math.floor(Math.random() * 6)]["base"];
+      console.log(pokeAi);
 
+      let damageMe = 0;
+      let damageAi = 0;
+
+      //true = attack && false = special attack
+      if(typeOfAttack == true){
+        damageMe = pokeMe["Attack"] - pokeAi["Defense"];
+      }
+      else{
+        damageMe = pokeMe["Sp. Attack"] - pokeAi["Sp. Defense"];
+      }
+
+      if(Math.random() < 0.5){
+        damageAi = pokeAi["Attack"] - pokeMe["Defense"];
+      }
+      else{
+        damageAi = pokeAi["Sp. Attack"] - pokeMe["Sp. Defense"];
+      }
+
+      if(damageMe <= damageAi){
+        let currentWin = winsInMatch;
+        currentWin[0]++;
+        if(currentWin[0] == 4){
+          setBattleStarted(false);
+          setBattleWon("Player");
+          console.log("AI won");
+        }
+        setWinsInMatch(currentWin);
+      }
+      else{
+        let currentWin = winsInMatch;
+        currentWin[1]++;
+        if(currentWin[1] == 4){
+          setBattleStarted(false);
+          setBattleWon("Ai");
+          console.log("AI won");
+        }
+        setWinsInMatch(currentWin);
+      }
+
+      console.log(damageAi, damageMe, winsInMatch);
     }
 
     function endBattle(){
-
+      //database stuff
+      setAiData([]);
+      setPlayerData([]);
+      setBattleWon("");
     }
 
     useEffect(() => {
