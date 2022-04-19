@@ -11,7 +11,7 @@ import Logo from './assets/Logo.png';
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
 
-    const [playerData, setPlayerData] = useState([]);
+    /*const [playerData, setPlayerData] = useState([]);
     const [aiData, setAiData] = useState([]);
 
     const [pokeIndex, setPokeIndex] = useState(0);
@@ -105,7 +105,7 @@ function App() {
       setAiData([]);
       setPlayerData([]);
       setBattleWon("");
-    }
+    }*/
 
     useEffect(() => {
         fetch('https://pokefight-group3.herokuapp.com/pokemon')
