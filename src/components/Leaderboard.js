@@ -6,7 +6,7 @@ export default function Leaderboard() {
     const [resultsData, setResultsData] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8000/game/leaderboard')
+        fetch('https://pokefight-group3.herokuapp.com/game/leaderboard')
         .then(response => response.json())
         .then(data => setResultsData(data))
         .catch(error => console.log(error))
